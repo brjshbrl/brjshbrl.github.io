@@ -49,6 +49,7 @@
   a:focus-visible, button:focus-visible{outline:2px solid var(--accent); outline-offset:2px;}
 
   .wrap{max-width:var(--max); margin:0 auto; padding:0 20px;}
+  html, body{overflow-x:hidden;}
 
   /* ---------- top bar ---------- */
   .topbar{
@@ -91,8 +92,8 @@
   @media (prefers-reduced-motion: reduce){ .hero h1 .cursor{animation:none;} }
   @keyframes blink{ 50%{opacity:0;} }
 
-  .hero .role{color:var(--accent); font-size:16px; margin:2px 0;}
-  .hero .meta{color:var(--text-dim); font-size:14px; margin:2px 0 22px;}
+  .hero .role{color:var(--accent); font-size:16px; margin:5px 0;}
+  .hero .meta{color:var(--text-dim); font-size:14px; margin:5px 0 24px;}
 
   .hero .lede{max-width:640px; color:var(--text); margin-bottom:26px;}
   .hero .lede .k{color:var(--amber);}
@@ -185,18 +186,35 @@
   .certrow .cid{color:var(--text-faint); font-size:11.5px;}
 
   /* ---------- contact ---------- */
-  .contact-grid{display:grid; gap:10px; max-width:480px;}
+  .contact-grid{display:grid; gap:14px; max-width:480px;}
   .kv{display:grid; grid-template-columns:110px 1fr; gap:10px; font-size:13.5px;}
   .kv .k{color:var(--text-dim);}
-  .kv .v{color:var(--text);}
+  .kv .v{color:var(--text); overflow-wrap:anywhere;}
 
   footer{padding:30px 0 50px; color:var(--text-faint); font-size:12px;}
   footer .prompt-line{margin-bottom:6px;}
 
+  /* prevent long paths/links from forcing horizontal scroll on any width */
+  .cmd .path, .card-head .flink, .certrow .cid, .certrow .issuer, .topbar-path{
+    overflow-wrap:anywhere;
+  }
+
   @media (max-width:600px){
+    .wrap{padding:0 22px;}
     .topbar nav{display:none;}
-    .filerow{grid-template-columns:1fr;}
+    .topbar-inner{padding:12px 16px;}
+    .filerow{grid-template-columns:1fr; padding:14px 16px;}
     .filerow .date{white-space:normal;}
+    section{padding:32px 0;}
+    .card{padding:16px;}
+    .btn{padding:10px 14px;}
+  }
+
+  @media (max-width:480px){
+    .kv{grid-template-columns:1fr; gap:3px;}
+    .kv .k{font-size:11.5px; text-transform:lowercase;}
+    .certrow{flex-direction:column; align-items:flex-start; gap:6px;}
+    .certrow .cid{align-self:flex-start;}
   }
 </style>
 </head>
@@ -404,7 +422,7 @@
 
   <footer>
     <div class="prompt-line"><span class="sym">$</span> <span style="color:var(--text-faint)">exit</span></div>
-    <div>© 2026 Brijesh Baral.</div>
+    <div>© 2026 Brijesh Baral. Built with a plain HTML/CSS terminal theme.</div>
   </footer>
 
 </div>
