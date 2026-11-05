@@ -226,7 +226,7 @@ footer{padding:34px 0 50px;color:var(--muted);font-size:14.5px;border-top:1px so
     </div>
 
     <div class="stats">
-      <div class="stat"><b data-n="10" data-s="+">0</b><span>systems and web apps put through VAPT</span></div>
+      <div class="stat"><b data-n="10" data-s="+">0</b><span>lab targets put through VAPT</span></div>
       <div class="stat"><b data-n="15" data-s="+">0</b><span>medium and high risk findings reported</span></div>
       <div class="stat"><b data-n="93" data-s="">0</b><span>ISO 27001 Annex A controls assessed</span></div>
       <div class="stat"><b data-n="3" data-s="">0</b><span>MITRE ATT&amp;CK techniques detected in my lab</span></div>
@@ -289,9 +289,9 @@ footer{padding:34px 0 50px;color:var(--muted);font-size:14.5px;border-top:1px so
           <h3>Cyber Security Intern</h3>
           <p class="where">Futurense Technologies, Bengaluru</p>
           <ul>
-            <li>Ran VAPT on 10+ systems and web apps with Nmap, Burp Suite and Wireshark, finding 15+ medium and high risk vulnerabilities.</li>
-            <li>Monitored logs, triaged alerts and escalated suspicious activity with documented resolutions.</li>
-            <li>Helped with security audits and kept security documentation and incident reports accurate.</li>
+            <li>Ran VAPT on 10+ intentionally vulnerable lab targets, including bWAPP and Metasploitable, using Nmap, Burp Suite and Wireshark.</li>
+            <li>Found 15+ medium and high risk vulnerabilities: SQL injection, XSS, security misconfigurations, weak credentials and outdated services.</li>
+            <li>Used Wireshark to inspect live traffic and built network simulations in Cisco Packet Tracer.</li>
           </ul>
         </div>
       </div>
@@ -303,7 +303,24 @@ footer{padding:34px 0 50px;color:var(--muted);font-size:14.5px;border-top:1px so
           <h3>Cybersecurity &amp; Ethical Hacking Training</h3>
           <p class="where">Apponix Academy, Bengaluru</p>
           <ul>
-            <li>Completed 20+ hands-on labs across vulnerability scanning, exploitation and the OWASP Top 10 methodology.</li>
+            <li>Three-month program with 20+ hands-on labs covering network security, vulnerability assessment and pen-testing basics.</li>
+            <li>Practised reconnaissance and exploitation workflows on Kali Linux with Nmap, Burp Suite and Metasploit.</li>
+            <li>Covered security controls, network zoning, cryptography, application and endpoint security, and common attack types.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="lvl">
+        <div class="badge">5</div>
+        <div class="card">
+          <div class="when">Jun 2025 – May 2026</div>
+          <h3>IT Support Specialist (Security &amp; Infrastructure)</h3>
+          <p class="where">Sunshine Industries, Tamil Nadu</p>
+          <ul>
+            <li>Maintained the company's servers and firewall day to day, so staff always had working access to the systems and network they relied on.</li>
+            <li>Ran routine Windows and software patching across company systems, closing known security gaps before they could be exploited.</li>
+            <li>Troubleshot network and connectivity faults layer by layer (device, cable, router, modem, settings), then fixed them directly or talked staff through the steps.</li>
+            <li>Built the sysadmin grounding behind my security work: knowing what normal looks like makes abnormal easier to spot.</li>
           </ul>
         </div>
       </div>
@@ -332,8 +349,8 @@ footer{padding:34px 0 50px;color:var(--muted);font-size:14.5px;border-top:1px so
         <div>
           <div class="k">SIEM · detection engineering</div>
           <h3>SOC home lab with Wazuh</h3>
-          <p style="margin-top:12px">An isolated lab (Wazuh 4.9.0 on Docker, Windows 11 and Kali VMs) detecting SMB brute force and obfuscated PowerShell. Wazuh's built-in brute-force rule used an 8 attempt / 240 second threshold and had no MITRE tag, so I wrote a tighter custom correlation rule and validated it with live attacks and a negative-control test.</p>
-          <div class="chips"><span class="chip">Wazuh</span><span class="chip">MITRE ATT&amp;CK</span><span class="chip">Custom rules</span><span class="chip">Windows Event Logs</span><span class="chip">Docker</span></div>
+          <p style="margin-top:12px">An isolated lab (Wazuh 4.9.0 on Docker, Windows 11 and Kali VMs) detecting SMB brute force and obfuscated PowerShell. Wazuh's built-in rule 60204 covers every failed-login type, needs 8 attempts in 240 seconds and has no MITRE tag, so I wrote custom rule 100100 on top of rule 60122 and validated it with live NetExec attacks and a negative-control test.</p>
+          <div class="chips"><span class="chip">Wazuh</span><span class="chip">MITRE ATT&amp;CK</span><span class="chip">Custom rules</span><span class="chip">NetExec</span><span class="chip">Windows Event Logs</span><span class="chip">Docker</span></div>
           <a class="go" href="https://github.com/brjshbrl/soc-home-lab">View on GitHub →</a>
         </div>
         <div class="facts">
@@ -362,12 +379,13 @@ footer{padding:34px 0 50px;color:var(--muted);font-size:14.5px;border-top:1px so
         <div>
           <div class="k">VAPT · automation</div>
           <h3>Web vulnerability scanning with ZAP and Python</h3>
-          <p style="margin-top:12px">One script runs the spider and active scan, exports findings to CSV and charts the risk breakdown with Matplotlib. It replaces manual scan setup and reporting.</p>
+          <p style="margin-top:12px">One script wraps the OWASP ZAP API: it takes a target URL, spiders the site, runs an active scan with error handling and live progress, exports every alert to CSV and charts the risk breakdown with Matplotlib. Tested on OWASP Juice Shop, where it surfaced CORS misconfigurations, missing CSP and HSTS headers and exposed version-control paths.</p>
           <div class="chips"><span class="chip">OWASP ZAP</span><span class="chip">Python</span><span class="chip">Matplotlib</span><span class="chip">CSV export</span></div>
           <a class="go" href="https://github.com/brjshbrl/OWASP-ZAP-Vulnerability-Scanner">View on GitHub →</a>
         </div>
         <div class="facts">
           <div class="fact"><b>1 script</b><span>spider, active scan, export and report</span></div>
+          <div class="fact"><b>134 alerts · 27 URLs</b><span>on Juice Shop: 35 Medium, 63 Low, 36 Informational</span></div>
         </div>
       </article>
 
@@ -391,12 +409,12 @@ footer{padding:34px 0 50px;color:var(--muted);font-size:14.5px;border-top:1px so
   <div class="wrap">
     <h2>What I can do for a security team</h2>
     <div class="dom">
-      <div class="card"><h3>SIEM &amp; log analysis</h3><div class="chips"><span class="chip">Wazuh</span><span class="chip">Windows Event Logs</span><span class="chip">Alert triage</span><span class="chip">Incident response</span><span class="chip">Threat detection</span></div></div>
+      <div class="card"><h3>SIEM &amp; log analysis</h3><div class="chips"><span class="chip">Wazuh</span><span class="chip">Windows Event Logs</span><span class="chip">Alert triage</span><span class="chip">Incident response</span><span class="chip">Threat detection</span><span class="chip">Detection rules</span></div></div>
       <div class="card"><h3>VAPT &amp; web security</h3><div class="chips"><span class="chip">Vulnerability assessment</span><span class="chip">Penetration testing</span><span class="chip">OWASP Top 10</span><span class="chip">Web app security</span></div></div>
       <div class="card"><h3>GRC &amp; compliance</h3><div class="chips"><span class="chip">ISO/IEC 27001:2022</span><span class="chip">Risk assessment</span><span class="chip">SoA</span><span class="chip">Gap assessment</span><span class="chip">Internal audit</span><span class="chip">Policies</span></div></div>
       <div class="card"><h3>Frameworks &amp; networking</h3><div class="chips"><span class="chip">MITRE ATT&amp;CK</span><span class="chip">NIST CSF</span><span class="chip">TCP/IP</span><span class="chip">DNS</span><span class="chip">DHCP</span><span class="chip">VLAN</span><span class="chip">Firewalls</span><span class="chip">Endpoint security</span></div></div>
-      <div class="card"><h3>Tools</h3><div class="chips"><span class="chip">Nmap</span><span class="chip">Burp Suite</span><span class="chip">Wireshark</span><span class="chip">OWASP ZAP</span><span class="chip">Metasploit</span><span class="chip">Kali Linux</span></div></div>
-      <div class="card"><h3>Automation</h3><div class="chips"><span class="chip">Python</span><span class="chip">Shell scripting</span></div></div>
+      <div class="card"><h3>Tools</h3><div class="chips"><span class="chip">Nmap</span><span class="chip">Burp Suite</span><span class="chip">Wireshark</span><span class="chip">OWASP ZAP</span><span class="chip">Metasploit</span><span class="chip">NetExec</span><span class="chip">Kali Linux</span></div></div>
+      <div class="card"><h3>Automation</h3><div class="chips"><span class="chip">Python</span><span class="chip">PowerShell</span><span class="chip">Shell scripting</span><span class="chip">Docker</span><span class="chip">Git</span></div></div>
     </div>
   </div>
 </section>
@@ -424,7 +442,7 @@ footer{padding:34px 0 50px;color:var(--muted);font-size:14.5px;border-top:1px so
       <p>I can start immediately and relocate. Send me a role and I'll reply with questions, not a template.</p>
       <div class="links">
         <a href="mailto:brjshbrl1411@gmail.com">brjshbrl1411@gmail.com</a>
-        <a class="alt" href="https://linkedin.com/in/brjsh-brl1411">LinkedIn</a>
+        <a class="alt" href="https://www.linkedin.com/in/brjsh-brl1411">LinkedIn</a>
         <a class="alt" href="https://github.com/brjshbrl">GitHub</a>
         <a class="alt" href="resume.pdf">Résumé</a>
       </div>
